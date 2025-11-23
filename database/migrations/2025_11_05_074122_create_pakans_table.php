@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->integer('stok')->default(0); // stok yang tersedia (bal/karung)
             $table->timestamps();
         });
-    }
+    } //test
 
     public function down(): void
     {
