@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    public function up(): void
+    public function up(): void //test
     {
         Schema::create('pakans', function (Blueprint $table) {
             $table->id('id_pakan');
