@@ -18,7 +18,7 @@ class PenggunaanPakanController extends Controller
     public function create()
     {
         $kolams = KolamIkan::all();
-        // total stok dari tabel pakans (semua stok dijumlahkan)
+        // total stock dari tabel pakans (semua stok dijumlahkan)
         $totalStok = Pakan::sum('stok');
 
         return view('penggunaan.create', compact('kolams', 'totalStok'));
@@ -82,7 +82,7 @@ class PenggunaanPakanController extends Controller
             'keterangan' => 'nullable|string',
         ]);
 
-        // Kembalikan stok total dari penggunaan sebelumnya
+        // Kembalikan stock total dari penggunaan sebelumnya
         $sisa = $penggunaan->jumlah_pakan;
         $pakans = Pakan::orderBy('tanggal_pakan_masuk', 'desc')->get();
 
@@ -93,7 +93,7 @@ class PenggunaanPakanController extends Controller
             $sisa = 0;
         }
 
-        // Kurangi stok total sesuai data baru
+        // Kurangi stock total sesuai data baru
         $sisaBaru = $data['jumlah_pakan'];
         $pakansBaru = Pakan::orderBy('tanggal_pakan_masuk', 'asc')->get();
 
@@ -125,7 +125,7 @@ class PenggunaanPakanController extends Controller
     {
         $item = PenggunaanPakan::findOrFail($id);
 
-        // Kembalikan stok pakan total
+        // Kembalikan stock pakan total
         $sisa = $item->jumlah_pakan;
         $pakans = Pakan::orderBy('tanggal_pakan_masuk', 'desc')->get();
 

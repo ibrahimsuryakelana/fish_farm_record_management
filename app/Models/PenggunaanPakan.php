@@ -19,13 +19,13 @@ class PenggunaanPakan extends Model
         'keterangan',
     ];
 
-    // Relasi ke kolam
+    // Relation ke kolam
     public function kolam()
     {
         return $this->belongsTo(KolamIkan::class, 'id_kolam', 'id_kolam');
     }
 
-    // Relasi ke pakan
+    // Relation ke pakan
     public function pakan()
     {
         return $this->belongsTo(Pakan::class, 'id_pakan', 'id_pakan');
